@@ -1,0 +1,14 @@
+.casa-p,
+.casa-b {
+  width: 100px;
+  height: 100px;
+  border-color: rebeccapurple;
+}
+
+.casa-p {
+  background-color: black;
+}
+
+.casa-b {
+  background-color: white;
+}
