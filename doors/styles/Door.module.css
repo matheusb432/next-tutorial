@@ -1,0 +1,103 @@
+.area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: var(--door-width);
+  height: var(--door-height);
+  margin: 5px;
+}
+
+.frame {
+  display: flex;
+  flex-grow: 1;
+  border-top: var(--door-border);
+  border-left: var(--door-border);
+  border-right: var(--door-border);
+  background-color: #0005;
+  width: 90%;
+}
+
+.door {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-grow: 1;
+  padding: var(--door-padding);
+
+  background-color: var(--door-color);
+}
+
+.knob {
+  display: flex;
+  position: absolute;
+  align-self: flex-start;
+  justify-content: flex-start;
+
+  /* ? top will always be relative to the door height */
+  /* top: calc(0.45 * var(--door-height)); */
+  margin-top: calc(0.45 * var(--door-height));
+  width: 20px;
+  height: 40px;
+  background-color: var(--knob-color);
+  border: 1px solid var(--door-color);
+  margin-left: 10px;
+}
+
+.handle {
+  position: absolute;
+  width: 30px;
+  height: 10px;
+  border: 2px solid var(--door-color);
+  border-left: 0 none;
+  margin-left: 5px;
+  margin-top: 10px;
+
+  /* border-top-right-radius: 40%;
+  border-bottom-right-radius: 40%; */
+
+  background-color: var(--knob-color) !important;
+}
+
+.number {
+  font-size: 3rem;
+}
+
+.door-outline {
+  position: absolute;
+  top: calc(var(--door-height) * 0.03);
+  width: calc(var(--door-width) * 0.56);
+  height: calc(var(--door-height) * 0.88);
+  border: 2px solid var(--knob-color);
+}
+
+.floor {
+  height: 10px;
+  width: 100%;
+  background-color: #ddd;
+}
+
+.selected {
+  border-top: 5px solid var(--door-selected-color);
+  border-left: 5px solid var(--door-selected-color);
+  border-right: 5px solid var(--door-selected-color);
+}
+
+.gift-area {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.selected .number {
+  color: var(--door-selected-color);
+}
+
+.selected .door-outline {
+  border-color: var(--door-selected-color);
+}
+
+/* .selected .knob {
+  background-color: var(--door-selected-color);
+} */

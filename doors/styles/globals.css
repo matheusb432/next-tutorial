@@ -1,0 +1,32 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #444;
+  color: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 
+  ? border-box resizes a div to not change it's CSS width/heigth no matter how big the
+  ? element's border is, usually intuitive so makes sense as to why it's enabled as default here.
+*/
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --door-height: 310px;
+  --door-width: 200px;
+  --door-padding: 3px;
+  --door-color: #683b28;
+  --door-selected-color: #1e88e5;
+  --door-border: 5px solid #b5b4b2;
+  --knob-color: #ffd700;
+}
