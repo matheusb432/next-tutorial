@@ -1,0 +1,29 @@
+.json-list {
+  list-style-type: none; /* Remove bullets */
+  /* padding: 0; */
+  /* margin: 0; */
+}
+
+.json-item {
+  margin-left: 14px;
+}
+
+.array-syntax {
+  color: black;
+}
+
+.comma-syntax {
+  color: olive;
+}
+
+.bracket-syntax {
+  color: orangered;
+}
+
+.prop {
+  color: seagreen;
+}
+
+.value {
+  color: maroon;
+}
