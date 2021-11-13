@@ -1,0 +1,29 @@
+==> CSS:
+	-- Flexbox:
+		-- justify-content == main axis alignment
+		-- align-items == cross axis alignment
+		-- justify/align-self == overwrites parent div alignment
+		-- flex => flex-grow/flex-shrink
+			-- works with relative proportions
+			-- percentual item size
+				=> {item's flex} / {sum of 'flex' of parent div's children} 
+	-- Properties:
+		-- box-sizing: border-box; 
+			--	Recalculates the size of div to subtract the border from the element
+				width/height, makes it so adding a border to an element doesn't alter
+				it's final size.
+		--	1rem == 16px
+	--	Pseudo-classes:
+		--	Style applied to an element after an event/action
+		--	Examples:
+			--	:focus => when an input element is being actively used
+			--	:hover => when the mouse is being hovered over an element
+			--	:first-child => first child element of a parent element
+			--	:last-child => last child element of a parent element
+			--	:nth-child({number}) => nth child element of a parent element 
+				--	:nth-child(odd) and :nth-child(even) provide useful utility too
+			--	:not({selector})
+				--	:not(:hover) 
+					=> when the mouse is *not* being hovered over an element
+			--	:focus-within 
+					=> keeps a dropdown menu open even if one of it's items is clicked 

@@ -1,0 +1,41 @@
+-- Creating a Next project with TypeScript built in
+
+	--	npx create-next-app@latest --ts {project-name}
+
+--	Prerendering Strategies
+	--	SPA - Single Page Application (Client)
+		--	Native React render strategy, renders pages based on client-side necessity
+		--	Client app has logic and interacts with the server using JSON format
+		--	Pages are rendered client-side
+
+		--	FLOW
+			--	Request -> Returns basic HTML
+			--	Loads JS -> Manipulates the DOM and loads the rest of the page
+			--	Essentially every HTML is generated via JS based on user interaction
+
+		---	Downsides: Bad for SEO (Search Engine Optimization) 
+						   since the HTML is just an empty root div
+
+	--	SSR - Server Side Rendering (server)
+		--	Strategy that renders the page again on every new request
+
+		--	SSR generates a new HTML page per request, when a user makes a request, a
+			new page will be generated, even assuming the event that a user makes an
+			identical request that returns the same value, consequentially it's more
+			taxing on the backend server
+
+		--	Good for SEO
+
+		--	FLOW
+			--	Request -> Generates new page with response data
+
+	--	SSG - Static Site Generation (server)
+		--	getStaticProps() [run by the server, not the browser]
+		--	Runs requests to the backend on build time and generates a static page
+
+		--	Can be updated from time to time based on configuration, when it's done
+			it will execute another request to the backend after the time has been
+			elapsed and will then update and render the static page again.
+
+		--	FLOW
+			-- 	Request => Server reads static file that is saved on the server disk.

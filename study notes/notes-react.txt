@@ -1,0 +1,71 @@
+--  React Hooks
+  ===:: useState() React Hook
+  	-- const [value, setValue] = useState({defaultValue}) 
+  	-- you can manipulate reactive values using the hook useState()
+  	-- whenever the reactive value changes, React will automatically rebuild
+  	   the UI to register any changes, so rendering data manually whenever you
+  	   set the data is redundant.
+
+  ===:: useEffect() React Hook
+   
+    --  Using useEffect() without a dependency array will make the effect callback
+        be called whenever a stateful value is changed in the component, meaning if
+        a setStateAction() is called in it, it will cause an infinite loop.
+    ---------------------------------------------------
+      useEffect(() => console.log('Hello World!'));
+    ---------------------------------------------------
+
+    --  Adding the [] to the useEffect() dependencies will guarantee it will only run once,
+        which is when the component is initialized, this prevents an infinite loop 
+        that triggers whenever a setStateAction() is called.
+
+    --  Note that it's very functionally similar to ngOnInit()
+    ---------------------------------------------------   
+          useEffect(() => {
+            fetch('http://localhost:3000/api/question/1424')
+              .then((res) => res?.json())
+              .then(setQuestion);
+          }, []);
+    ---------------------------------------------------
+
+      -- By adding [data] to the useEffect() hook dependencies list, React will rerun
+         the code in this hook whenever the value of the reactive variable changes.
+    ---------------------------------------------------
+          useEffect(() => {
+            fetch('http://localhost:3000/api/question/1424')
+              .then((res) => res?.json())
+              .then(setQuestion);
+          }, [data]); 
+    ---------------------------------------------------
+
+
+  ===:: useCallback() React Hook
+
+    -- Returns a memoized version of a callback/function that only changes when their 
+       dependencies change, useful when the function does a lot of computation and can
+       have what is essentially a cache of itself while it's dependencies don't change.
+
+    ---------------------------------------------------
+    const renderUsers = useCallback(() => {
+      return (
+        <ul>
+          {users.map(
+            (x: IUser): JSX.Element => (
+              <li key={x.id}>
+                {x.id} | {x.name} is {x.age} years old
+              </li>
+            )
+          )}
+        </ul>
+      );
+    }, [users]);
+    ---------------------------------------------------
+
+  ===:: Async Functions
+    --  Any function that returns a Promise<> can be awaited, as long as it's called in an async context
+    ------------------------------------------
+      *async* function fetchAsync() {
+        const res = *await* fetch('http://url...');
+        const jsonData = *await* res.json();
+      }
+    ------------------------------------------
